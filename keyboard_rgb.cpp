@@ -3,7 +3,7 @@
 #include <chrono>
 #include <thread>
 
-std::string rgb2hex(unsigned int r, unsigned int g, unsigned int b)
+std::string rgb2hex(unsigned int& r, unsigned int& g, unsigned int& b)
 {
   //convertes the rgb values to hex values
   std::stringstream ss;
@@ -31,7 +31,7 @@ std::string rgb2hex(unsigned int r, unsigned int g, unsigned int b)
   return hex_value;
 }
 
-void setColor(unsigned int zones, unsigned int red, unsigned int green, unsigned int blue)
+void setColor(const unsigned int& zones, unsigned int& red, unsigned int& green, unsigned int& blue)
 {
   //sets the color to the keyboard
   std::string color = rgb2hex(red, green, blue);
@@ -57,7 +57,7 @@ int main() {
     //declares the increment color index variable
     unsigned int iC;
 
-    rgb[0] = 255; //rgb[0] == red
+    rgb[0] = 225; //rgb[0] == red
     rgb[1] = 0;   //rgb[1] == green
     rgb[2] = 0;   //rgb[2] == blue
 
@@ -79,7 +79,7 @@ int main() {
       }
 
       //increments the "incrementing color" and decrements the "decrementing color"
-      for ( unsigned int i = 0; i < 255; i++ ) {
+      for ( unsigned int i = 0; i < 225; i++ ) {
 
         rgb[dC]--;
         rgb[iC]++;
